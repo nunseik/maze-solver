@@ -19,14 +19,25 @@ class Cell():
         self._x2 = x2
         self._y1 = y1
         self._y2 = y2
+        left_color = "white"
+        right_color = "white"
+        top_color = "white"
+        bottom_color = "white"
         if self.has_left_wall:
-            self._win.draw_line(Line(Point(self._x1,self._y1), Point(self._x1,self._y2)), "red")
+            left_color = "red"
+        self._win.draw_line(Line(Point(self._x1,self._y1), Point(self._x1,self._y2)), left_color)
+        
         if self.has_right_wall:
-            self._win.draw_line(Line(Point(self._x2,self._y1), Point(self._x2,self._y2)), "blue")
-        if self.has_top_wall: 
-            self._win.draw_line(Line(Point(self._x1,self._y1), Point(self._x2,self._y1)), "green")
+            right_color = "blue"
+        self._win.draw_line(Line(Point(self._x2,self._y1), Point(self._x2,self._y2)), right_color)
+        
+        if self.has_top_wall:
+            top_color = "green"
+        self._win.draw_line(Line(Point(self._x1,self._y1), Point(self._x2,self._y1)), top_color)
+        
         if self.has_bottom_wall:
-            self._win.draw_line(Line(Point(self._x1, self._y2), Point(self._x2, self._y2)), "purple")
+            bottom_color = "purple"
+        self._win.draw_line(Line(Point(self._x1, self._y2), Point(self._x2, self._y2)), bottom_color)
 
     def draw_move(self, to_cell, undo=False):
         x_center = (self._x1 + self._x2)/2

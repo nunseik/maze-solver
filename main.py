@@ -2,7 +2,7 @@ from graphics import Window
 from maze import Maze
 
 def main():
-    win = Window(800,600)
+    win = Window(900,700)
     # win.draw_line(Line(Point(50,50), Point(400,400)), "red")
     # win.draw_line(Line(Point(50,400), Point(400,50)), "blue")
     # win.draw_line(Line(Point(200,100), Point(200,500)), "green")
@@ -16,7 +16,7 @@ def main():
 
     # d.draw_move(c)
 
-    m = Maze(0,0,10,10,80,60,win)
+    m = Maze(50,50,10,10,80,60,win)
 
     win.wait_for_close()
     
