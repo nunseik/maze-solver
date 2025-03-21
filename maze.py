@@ -29,6 +29,7 @@ class Maze():
         self._create_cells()
         self._break_entrance_and_exit()
         self._break_walls_r(0,0)
+        self._reset_cells_visited()
 
     def _create_cells(self):
         for i in range(self.num_cols):
@@ -100,6 +101,12 @@ class Maze():
             
             # Recursive call to explore from the chosen cell
             self._break_walls_r(rand_i,rand_j)
-            
+    
+    def _reset_cells_visited(self):
+        for col in self._cells:
+            for cell in col:
+                cell.visited = False
+
+        
 
 
