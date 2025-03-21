@@ -2,8 +2,6 @@
 
 A Python application that generates and solves random mazes using recursive backtracking algorithms. The program creates a visual representation of the maze and animates the solving process in real-time.
 
-![Maze Solver Demo](https://api.placeholder.com/640/480)
-
 ## Features
 
 - Random maze generation using depth-first search with recursive backtracking
